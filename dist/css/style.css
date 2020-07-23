@@ -1,0 +1,189 @@
+* {
+  margin: 0;
+  padding: 0; }
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit; }
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; }
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #171717;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh; }
+
+li {
+  list-style: none; }
+
+a {
+  text-decoration: none;
+  color: inherit; }
+
+.btn {
+  border: none;
+  background-color: transparent; }
+
+.loader {
+  margin: 24vh auto;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .loader svg {
+    height: 2.2rem;
+    width: 2.2rem;
+    fill: #171717;
+    transform-origin: 44% 50%;
+    animation: rotate 1.5s infinite linear; }
+  .loader .loading {
+    color: #171717;
+    font-size: 2.4rem;
+    font-weight: 400;
+    margin-left: .6rem; }
+@keyframes rotate {
+  0% {
+    transform: rotate(0); }
+  100% {
+    transform: rotate(360deg); } }
+.search {
+  justify-self: flex-end;
+  --size: 4.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0;
+  overflow: hidden;
+  position: relative;
+  width: var(--size);
+  height: var(--size);
+  transition: width 400ms;
+  padding-right: 10px; }
+  .search input[type=text] {
+    font-size: 1.6rem; }
+  .search-field {
+    border: 0;
+    padding: .25rem 1em;
+    flex-grow: 1;
+    outline: 0;
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    cursor: pointer; }
+    .search-field::-webkit-input-placeholder {
+      font-size: 1.6rem;
+      color: #dad8d7;
+      padding-left: 2px; }
+  .search-submit {
+    font-size: 1.6rem;
+    margin-left: auto;
+    background: 0;
+    border: 0;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background 200ms ease-out;
+    width: calc(var(--size) - 10px);
+    height: calc(var(--size) - 10px);
+    color: #171717; }
+
+.search:focus-within {
+  width: 75%;
+  border: 1px solid black; }
+  .search:focus-within .search-field {
+    opacity: 1;
+    z-index: initial;
+    cursor: initial;
+    width: calc(100% - var(--size)); }
+  .search:focus-within .search-submit {
+    color: #171717; }
+    .search:focus-within .search-submit:hover, .search:focus-within .search-submit:focus {
+      outline: 0; }
+
+.nav-items {
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  align-items: center;
+  padding: 3.2rem 0; }
+  .nav-items ul {
+    display: flex; }
+    .nav-items ul li {
+      font-size: 1.8rem;
+      font-size: 900;
+      font-family: 'Merriweather', serif;
+      margin-right: 4rem; }
+  .nav-items button {
+    font-size: 2rem;
+    padding-left: 2rem; }
+
+.search-list {
+  background-color: white;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 25rem));
+  grid-gap: 2rem;
+  justify-content: left;
+  align-content: space-between;
+  padding: 2rem 0; }
+  .search-list .movie-card {
+    padding: 2rem; }
+    .search-list .movie-card:hover {
+      background-color: #eeeeee;
+      transition: background-color .3s; }
+    .search-list .movie-card:hover .movie-card__info {
+      visibility: visible;
+      opacity: 1;
+      transition: border 0.2s ease-in-out 0s, box-shadow 0.2s ease-in-out 0s, background-color 0.2s ease-in-out 0s; }
+    .search-list .movie-card__info {
+      height: auto;
+      font-size: 1.6rem;
+      font-weight: 600;
+      visibility: hidden;
+      text-align: center; }
+    .search-list .movie-card img {
+      width: 100%;
+      display: block;
+      object-fit: contain;
+      margin-bottom: 6px; }
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 36rem 1fr;
+  width: 100vw;
+  height: 100vh; }
+  .wrapper .side-bar {
+    padding: 0 4rem;
+    border-right: 1px dotted #c1c1b5; }
+    .wrapper .side-bar__content {
+      position: sticky;
+      top: 0; }
+      .wrapper .side-bar__content h1 {
+        font-size: 3rem;
+        font-weight: 900;
+        padding: 3.2rem 0;
+        border-bottom: 1px dotted #c1c1b5;
+        font-family: 'Merriweather', serif; }
+      .wrapper .side-bar__content p {
+        font-size: 1.6rem;
+        line-height: 1.4;
+        padding: 3.2rem 0; }
+  .wrapper .main-container {
+    padding: 0 4rem; }
+    .wrapper .main-container .main-nav {
+      background-color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 10; }
+    .wrapper .main-container .main-title {
+      background-color: green; }
+
+/*# sourceMappingURL=style.css.map */

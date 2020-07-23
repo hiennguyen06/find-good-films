@@ -1,0 +1,46 @@
+.wrapper {
+    display: grid;
+    grid-template-columns: 36rem 1fr;
+    width: 100vw;
+    height: 100vh;
+
+    .side-bar {
+        padding: 0 4rem;
+        border-right: 1px dotted #c1c1b5;
+
+        &__content {
+            position: sticky;
+            top: 0;
+    
+            h1 {
+                font-size: 3rem;
+                font-weight: 900;
+                padding: 3.2rem 0;
+                border-bottom: 1px dotted #c1c1b5;
+                font-family: 'Merriweather', serif;
+            }
+    
+            p {
+                font-size: 1.6rem;
+                line-height: 1.4;
+                padding: 3.2rem 0;
+    
+            }
+        }
+    }
+    
+    .main-container {
+        padding: 0 4rem;
+
+        .main-nav {
+            background-color: #fff;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .main-title {
+            background-color: green;
+        }
+    } 
+}
