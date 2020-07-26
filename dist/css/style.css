@@ -34,20 +34,15 @@ a {
 .loader {
   margin: 24vh auto;
   text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center; }
+  position: absolute;
+  top: 30%;
+  left: 58%; }
   .loader svg {
     height: 2.2rem;
     width: 2.2rem;
     fill: #171717;
     transform-origin: 44% 50%;
     animation: rotate 1.5s infinite linear; }
-  .loader .loading {
-    color: #171717;
-    font-size: 2.4rem;
-    font-weight: 400;
-    margin-left: .6rem; }
 @keyframes rotate {
   0% {
     transform: rotate(0); }
@@ -98,7 +93,7 @@ a {
     color: #171717; }
 
 .search:focus-within {
-  width: 75%;
+  width: 50%;
   border: 1px solid black; }
   .search:focus-within .search-field {
     opacity: 1;
@@ -146,7 +141,7 @@ a {
     .search-list .movie-card__info {
       height: auto;
       font-size: 1.6rem;
-      font-weight: 600;
+      font-weight: 500;
       visibility: hidden;
       text-align: center; }
     .search-list .movie-card img {

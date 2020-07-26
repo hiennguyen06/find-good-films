@@ -16,10 +16,12 @@ const renderSearchMovies = search => {
 
     const markup = `
         <li class="movie-card">
-            <img src="${image}">
-            <div class="movie-card__info">
-                <p>${search.title}</p>
-            </div>
+            <a href="#${search.id}">
+                <img src="${image}">
+                <div class="movie-card__info">
+                    <p>${search.title}</p>
+                </div>  
+            </a>
         </li>
     `
     document.querySelector('.search-list').insertAdjacentHTML('beforeend', markup);
