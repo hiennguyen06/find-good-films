@@ -12,7 +12,7 @@ export const clearSearchResults = () => {
 
 const renderSearchMovies = search => {
     const poster = `https://image.tmdb.org/t/p/w780${search.poster_path}`;
-    const image = poster === 'https://image.tmdb.org/t/p/w780null' ? 'http://www.newdesignfile.com/postpic/2015/02/no-icon-available_68024.png' : `${poster}`;
+    const image = poster === 'https://image.tmdb.org/t/p/w780null' ? 'http://samodrole.com/projects/amos/images/noImage.png' : `${poster}`;
 
     const markup = `
         <li class="movie-card">

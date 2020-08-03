@@ -14,8 +14,8 @@ html {
 body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
-  line-height: 1.6;
-  color: #171717;
+  line-height: 1.5;
+  color: #13141c;
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100vh; }
@@ -30,6 +30,32 @@ a {
 .btn {
   border: none;
   background-color: transparent; }
+
+.btn-watchlist,
+.btn-trailer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.2rem 2.4rem;
+  border: 1px solid #fdbf00; }
+
+.btn-trailer {
+  background-color: #fdbf00; }
+
+.btn-remove-fav {
+  padding: 8px 1.6rem;
+  border: 1px solid #000;
+  cursor: pointer; }
+  .btn-remove-fav:hover {
+    background-color: #000;
+    color: #fff;
+    transition: all 0.2s; }
+
+.fa-bookmark {
+  color: #fdbf00; }
+
+.fa-play {
+  color: #fff; }
 
 .loader {
   margin: 24vh auto;
@@ -150,6 +176,151 @@ a {
       object-fit: contain;
       margin-bottom: 6px; }
 
+.movie {
+  background-color: #13141c;
+  color: #fff;
+  position: fixed;
+  display: flex;
+  grid-auto-flow: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: .25s all;
+  z-index: 1000;
+  overflow: scroll; }
+
+.close {
+  position: absolute;
+  top: 10vh;
+  right: 10vw;
+  background-color: transparent;
+  color: #908f94;
+  border: none;
+  font-size: 4rem;
+  pointer: cursor; }
+  .close:hover {
+    color: #fff; }
+  .close:active {
+    outline: none; }
+
+.movie-content {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  justify-content: center;
+  width: 70vw;
+  margin: 10vh auto; }
+  .movie-content .btn {
+    outline: none;
+    cursor: pointer; }
+  .movie-content h3 {
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    color: #908f94;
+    margin-bottom: 8px; }
+  .movie-content p {
+    color: #fff;
+    font-size: 1.6rem; }
+  .movie-content .poster {
+    width: 48rem;
+    height: auto; }
+    .movie-content .poster img {
+      width: 100%;
+      display: block;
+      object-fit: contain; }
+  .movie-content__info {
+    padding: 0 4rem; }
+    .movie-content__info .title {
+      margin-bottom: 4rem; }
+      .movie-content__info .title h1 {
+        font-size: 4.8rem;
+        font-weight: 900;
+        line-height: 1.2; }
+        .movie-content__info .title h1 span {
+          font-size: 2.4rem;
+          border: 1px solid #908f94;
+          color: #908f94;
+          padding: 2px 2rem;
+          margin-left: 2.4rem; }
+    .movie-content__info .rating {
+      display: flex;
+      align-items: center;
+      margin-bottom: 4rem; }
+      .movie-content__info .rating p {
+        font-size: 2rem;
+        font-weight: 900; }
+      .movie-content__info .rating i {
+        color: #fdbf00;
+        font-size: 3.2rem;
+        margin-right: 8px; }
+    .movie-content__info .plot {
+      margin-bottom: 4rem; }
+  .movie-content .movie-buttons {
+    display: grid;
+    grid-template-columns: max-content max-content;
+    grid-gap: 0 2rem;
+    margin-top: 4rem; }
+    .movie-content .movie-buttons p {
+      color: #fdbf00;
+      margin-left: 8px;
+      letter-spacing: 1px; }
+    .movie-content .movie-buttons .trailer-text {
+      color: #fff; }
+
+.watchlist-section {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.7);
+  transition: .25s all;
+  z-index: 100;
+  pointer-events: none;
+  opacity: 0; }
+  .watchlist-section .watchlist-panel {
+    background-color: #fff;
+    position: absolute;
+    width: 400px;
+    height: 100vh;
+    box-sizing: border-box;
+    top: 0;
+    right: 0;
+    opacity: 1;
+    transition: .25s all;
+    overflow: scroll;
+    box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.2); }
+  .watchlist-section .watchlist-header {
+    margin: 4rem 2.4rem; }
+    .watchlist-section .watchlist-header h2 {
+      font-size: 2.4rem;
+      margin-bottom: 8px; }
+  .watchlist-section .watchlist .favourites-card {
+    display: flex;
+    margin: 1.6rem 2.4rem;
+    box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.2); }
+    .watchlist-section .watchlist .favourites-card .favourite-poster {
+      width: 10rem;
+      height: auto; }
+      .watchlist-section .watchlist .favourites-card .favourite-poster img {
+        width: 100%;
+        display: block;
+        object-fit: contain; }
+    .watchlist-section .watchlist .favourites-card .favourite-data {
+      padding: 1.6rem; }
+      .watchlist-section .watchlist .favourites-card .favourite-data h3, .watchlist-section .watchlist .favourites-card .favourite-data p {
+        font-size: 1.6rem; }
+
+.close-fav {
+  top: 32px;
+  right: 16px; }
+
 .wrapper {
   display: grid;
   grid-template-columns: 36rem 1fr;
@@ -176,8 +347,7 @@ a {
     .wrapper .main-container .main-nav {
       background-color: #fff;
       position: sticky;
-      top: 0;
-      z-index: 10; }
+      top: 0; }
     .wrapper .main-container .main-title {
       background-color: green; }
 

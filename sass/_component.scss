@@ -134,6 +134,7 @@
         font-size: 2rem;
         padding-left: 2rem;
     }
+
 }
 
 .search-list {
@@ -178,4 +179,213 @@
             margin-bottom: 6px;
         }
     }
+}
+
+.movie {
+    background-color: #13141c;
+    color: #fff;
+    position: fixed;
+    display: flex;
+    grid-auto-flow: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: .25s all;
+    z-index: 1000;
+    overflow: scroll;
+}
+
+.close {
+    position: absolute;
+    top: 10vh;
+    right: 10vw;
+    background-color: transparent;
+    color: #908f94;
+    border: none;
+    font-size: 4rem;
+    pointer: cursor;
+
+    &:hover {
+        color: #fff;
+    }
+
+    &:active {
+        outline: none;
+    }
+
+}
+
+.movie-content {
+
+    .btn {
+        outline: none;
+        cursor: pointer;
+
+    }
+
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    justify-content: center;
+    width: 70vw;
+    margin: 10vh auto;
+
+    h3 {
+        text-transform: uppercase;
+        font-size: 1.6rem;
+        color: #908f94;
+        margin-bottom: 8px;
+    }
+
+    p {
+        color: #fff;
+        font-size: 1.6rem;
+    }
+
+    .poster {
+        width: 48rem;
+        height: auto;
+
+        img {
+            width: 100%;
+            display: block;
+            object-fit: contain;
+        }
+    }
+
+    &__info {
+        padding: 0 4rem;
+        
+        .title {
+            margin-bottom: 4rem;
+
+            h1 {
+                font-size: 4.8rem;
+                font-weight: 900;
+                line-height: 1.2;
+
+                span {
+                    font-size: 2.4rem;
+                    border: 1px solid #908f94;
+                    color: #908f94;
+                    padding: 2px 2rem;
+                    margin-left: 2.4rem;
+                }
+            }   
+        }
+
+        .rating {
+            display: flex;
+            align-items: center;
+            margin-bottom: 4rem;
+            
+            p {
+                font-size: 2rem;
+                font-weight: 900;
+                
+            }
+            
+            i {
+                color: #fdbf00;
+                font-size: 3.2rem;
+                margin-right: 8px;
+            }
+        }
+
+        .plot {
+            margin-bottom: 4rem;
+        }
+    }
+
+    .movie-buttons {
+        display: grid;
+        grid-template-columns: max-content max-content;
+        grid-gap: 0 2rem;
+        margin-top: 4rem;
+    
+        p {
+            color: #fdbf00;
+            margin-left: 8px;
+            letter-spacing: 1px;
+        }
+    
+        .trailer-text {
+            color: #fff;
+        }
+    }
+}
+
+.watchlist-section {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.7);
+    transition: .25s all;
+    z-index: 100;
+    pointer-events: none;
+    opacity: 0;
+    
+    .watchlist-panel {
+        background-color: #fff;
+        position: absolute;
+        width: 400px;
+        height: 100vh;
+        box-sizing: border-box;
+        top: 0;
+        right: 0;
+        opacity: 1;
+        transition: .25s all;
+        overflow: scroll;
+        box-shadow: 0 0 1.5rem rgba(0,0,0,0.2);
+    }
+
+    .watchlist-header {
+        margin: 4rem 2.4rem;
+
+        h2 {
+            font-size: 2.4rem;
+            margin-bottom: 8px;
+        }
+    }
+
+    .watchlist {
+        
+        .favourites-card {
+            display: flex;
+            margin: 1.6rem 2.4rem;
+            box-shadow: 0 0 1.5rem rgba(0,0,0,0.2);
+            
+            .favourite-poster {
+                width: 10rem;
+                height: auto;
+        
+                img {
+                    width: 100%;
+                    display: block;
+                    object-fit: contain;
+                }
+            }
+
+            .favourite-data {
+                padding: 1.6rem;
+
+                h3, p {
+                    font-size: 1.6rem;
+                }
+            }
+        }
+    }
+}
+
+.close-fav {
+    top: 32px;
+    right: 16px;
 }

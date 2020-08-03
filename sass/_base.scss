@@ -17,8 +17,8 @@ html {
 body {
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
-    line-height: 1.6;
-    color: #171717;
+    line-height: 1.5;
+    color: #13141c;
     background-size: cover;
     background-repeat: no-repeat; 
 
@@ -37,4 +37,38 @@ a {
 .btn {
     border: none;
     background-color: transparent;
+}
+
+.btn-watchlist,
+.btn-trailer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.2rem 2.4rem;
+    border: 1px solid #fdbf00;
+}
+
+.btn-trailer {
+    background-color: #fdbf00;
+}
+
+.btn-remove-fav {
+    padding: 8px 1.6rem;
+    border: 1px solid #000;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #000;
+        color: #fff;
+        transition: all 0.2s;
+    }
+}
+
+
+.fa-bookmark {
+    color: #fdbf00;
+}
+
+.fa-play {
+    color: #fff;
 }
