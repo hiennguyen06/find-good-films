@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,400;0,700;0,900;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Find Good Films</title>
+</head>
+    <body>
+        <div class="wrapper">
+            <aside class="side-bar">
+                <div class="side-bar__content">
+                    <h1>Find Good Films</h1>
+                    <p>Find Good Films is a movie database where you can create your favourite list of movies. You can search movies or browse between Popular, New Releases, Upcoming and Top 100.</p>
+                </div>
+            </aside>
+
+            <section class="main-container">
+                <div class="main-nav">
+                     
+
+                    <nav class="nav-items">
+                        <ul>
+                            <li class="active-nav-link">Popular</li>
+                            <li class="upcoming">Upcoming</li>
+                            <li class="now-playing">Now Playing</li>
+                            <!-- <li class="active-nav-link"><a class="nav-link" href="#">Popular</a></li>
+                            <li class="upcoming"><a href="#" data-navlink="upcoming">Upcoming</a></li>
+                            <li><a href="#" data-navlink="now playing">Now Playing</a></li>
+                            <li><a href="#" data-navlink="top 100">Top 100</a></li> -->
+                        </ul>
+
+                        <form class="search">
+                            <input type="text" class="search-field" placeholder="Search your favourite movies">
+                            <button class="search-submit" aria-label="submit search"><i class="fas fa-search"></i></button>
+                        </form>
+                        <button class="btn btn-open-watchlist"><i class="far fa-list-alt"></i></button>
+                    </nav>
+
+                    
+                </div>
+                
+                <ul class="search-list"></ul>
+            </section>  
+            <div class="movie"></div>
+            <div class="watchlist-section">
+                <div class="watchlist-panel">
+                    <div class="watchlist-header">
+                        <h2>My Watchlist</h2>
+                        <button class="btn btn-remove-fav">Remove all</button>
+                    </div>
+                    <ul class="watchlist">
+                    </ul>
+                </div>
+            </div>
+        </div>
+    <script type="text/javascript" src="js/bundle.js"></script></body>
+</html>
