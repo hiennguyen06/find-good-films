@@ -1,4 +1,4 @@
-export const getInput = () => document.querySelector('.search-field').value;
+export const getInput = () => document.querySelector('.search-field').value.toLowerCase();
 
 // clear the search input 
 export const clearInput = () => {

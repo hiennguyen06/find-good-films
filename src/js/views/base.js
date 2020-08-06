@@ -27,7 +27,7 @@ export const getPopular = async () => {
 
     const res = await axios(url);
     const data = res.data.results
-    console.log(data);
+    // console.log(data);
 
     const movie = data.map((result, index) => ({
         index: index + 1,
@@ -36,9 +36,8 @@ export const getPopular = async () => {
         poster: result.poster_path
     }));
 
-    console.log(movie);
+    // console.log(movie);
     renderPopularMovies(movie);
-    
 }
 
 const renderPopularMovie = (movie) => {
@@ -46,6 +45,7 @@ const renderPopularMovie = (movie) => {
     const image = poster === 'https://image.tmdb.org/t/p/w780null' ? 'http://samodrole.com/projects/amos/images/noImage.png' : `${poster}`;
 
     const markup = `
+
         <li class="movie-card">
             <a href="#${movie.id}">
                 <img src="${image}">

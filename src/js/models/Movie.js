@@ -11,7 +11,7 @@ export default class Movie {
         try {
             const res = await axios.get(`https://api.themoviedb.org/3/movie/${this.id}?api_key=${apiKey}&language=en-US`);
             const data = res.data;
-            console.log(data);
+            // console.log(data);
 
             const genres = data.genres.map(genre => genre.name).join(', ');
             const year = data.release_date.substring(0, 4);
@@ -28,7 +28,7 @@ export default class Movie {
             const getVideo = await axios.get(`https://api.themoviedb.org/3/movie/${this.id}/videos?api_key=${apiKey}&language=en-US`);
             const video = getVideo.data.results[0].key; 
             this.video = `https://www.youtube.com/watch?v=${video}`;
-            console.log(video);
+            // console.log(video);
             
         } catch (error) {
             console.log(error);

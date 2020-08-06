@@ -6,7 +6,10 @@
 
     .side-bar {
         padding: 0 4rem;
-        border-right: 1px dotted #c1c1b5;
+        // border-right: 1px dotted #c1c1b5;
+        background-color: #13141c;
+        color: #fff;
+        // margin: 4rem;
 
         &__content {
             position: sticky;
@@ -16,7 +19,8 @@
                 font-size: 3rem;
                 font-weight: 900;
                 padding: 3.2rem 0;
-                border-bottom: 1px dotted #c1c1b5;
+                background-color: #13141c;
+                border-bottom: 1px solid #fff;
                 font-family: 'Merriweather', serif;
             }
     

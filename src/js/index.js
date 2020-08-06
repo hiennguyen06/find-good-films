@@ -1,9 +1,11 @@
 import Search from './models/Search';
 import Movie from './models/Movie';
 import Favourites from './models/Favourites';
+import Filter from './models/Filter';
 import * as searchView from './views/searchView';
 import * as movieView from './views/movieView';
 import * as favouritesView from './views/favouritesView';
+import * as filterView from './views/filterView';
 import { renderLoader, clearLoader, getPopular } from './views/base';
 
 // Test the search model
@@ -137,7 +139,7 @@ document.querySelector('.search').addEventListener('submit', e => {
     controlSearch();
 });
 
-document.querySelector('.movie').addEventListener('click', e=> {
+document.querySelector('.movie').addEventListener('click', e => {
     if (e.target.closest('.btn-watchlist, btn-watchlist *')) {
         controlFavourite();
     }   
@@ -167,5 +169,44 @@ export const closeWatchlist = () => {
     }); 
 };
 closeWatchlist();
-
 getPopular();
+
+// Test the search model
+const input = () => document.querySelector(".upcoming").innerHTML.toLowerCase();
+
+
+console.log(input);
+
+// const filter = new Filter('upcoming');
+// filter.getFilterResults();
+// console.log(filter);
+
+
+const controlFilter = async () => {
+    const query = input();
+    // console.log(query);
+    
+    // if there is a query, do the following actions 
+    if (query) {
+
+        // new Search Object. Add to the state
+        state.filter = new Filter(query);
+
+        // Prepare UI 
+        // searchView.clearInput();
+        // searchView.clearSearchResults();
+        // renderLoader(document.querySelector('.search-list'));
+
+        // search for movies using the Search model
+        await state.filter.getFilterResults();
+        console.log(state.filter)
+
+        // Render results to UI
+        // clearLoader();
+        // searchView.renderAllSearchMovies(state.search.result);
+    }
+};
+
+document.querySelector('.upcoming').addEventListener('click', e => {
+    controlFilter();
+});
