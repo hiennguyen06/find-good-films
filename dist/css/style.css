@@ -45,7 +45,8 @@ a {
 .btn-remove-fav {
   padding: 8px 1.6rem;
   border: 1px solid #000;
-  cursor: pointer; }
+  cursor: pointer;
+  outline: none; }
   .btn-remove-fav:hover {
     background-color: #000;
     color: #fff;
@@ -155,7 +156,9 @@ a {
         transition: all 0.2s; }
   .nav-items button {
     font-size: 2rem;
-    padding-left: 2rem; }
+    padding-left: 2rem;
+    outline: none;
+    cursor: pointer; }
 
 .search-list {
   background-color: white;
@@ -329,8 +332,20 @@ a {
         font-size: 1.6rem; }
 
 .close-fav {
+  position: absolute;
   top: 32px;
-  right: 16px; }
+  right: 24px;
+  background-color: transparent;
+  color: #999;
+  border: none;
+  font-size: 4rem;
+  pointer: cursor;
+  outline: none; }
+  .close-fav:hover {
+    color: #13141c; }
+  .close-fav:active {
+    outline: none;
+    border: none; }
 
 .wrapper {
   display: grid;

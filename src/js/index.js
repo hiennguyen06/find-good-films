@@ -146,7 +146,6 @@ document.querySelector('.movie').addEventListener('click', e => {
     }   
 });
 
-// window.localStorage.clear();
 
 
 document.querySelector('.btn-open-watchlist').addEventListener('click', e=> {
@@ -166,6 +165,10 @@ export const closeWatchlist = () => {
             const scrollY = document.getElementsByTagName('body')[0].style.top;
             document.getElementsByTagName('body')[0].style.position = '';
             document.getElementsByTagName('body')[0].style.top = '';
+        } else if (e.target.matches('.btn-remove-fav')) {
+            window.localStorage.clear()
+            document.querySelector(`.watchlist`).innerHTML = "";
+
         }
     }); 
 };

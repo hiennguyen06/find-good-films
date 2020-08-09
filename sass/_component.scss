@@ -138,6 +138,8 @@
     button {
         font-size: 2rem;
         padding-left: 2rem;
+        outline: none;
+        cursor: pointer;
     }
 
 }
@@ -227,6 +229,7 @@
     }
 
 }
+
 
 .movie-content {
 
@@ -391,7 +394,25 @@
     }
 }
 
+
 .close-fav {
+    position: absolute;
     top: 32px;
-    right: 16px;
+    right: 24px;
+    background-color: transparent;
+    color: #999;
+    border: none;
+    font-size: 4rem;
+    pointer: cursor;
+    outline: none;
+
+    &:hover {
+        color: #13141c;
+    }
+
+    &:active {
+        outline: none;
+        border: none;
+    }
+
 }
