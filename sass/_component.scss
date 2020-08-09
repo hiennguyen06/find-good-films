@@ -114,26 +114,24 @@
 
     ul {
         display: flex;
-
+        
         li {
             font-size: 1.8rem;
             font-size: 900;
             font-family: 'Merriweather', serif;
             margin-right: 4rem;
-            color: #999999;
-            padding-bottom: 4px;
-
-            // &:hover {
-            //     opacity: 1;
-            //     transition: all 0.2s;
-            // }
+            color: #999;
         }
 
-        .active-nav-link {
-            color: #13141c;
-            border-bottom: 2px solid #13141c;
-        
+        a {
+            padding-bottom: 6px;
+            
+            &:hover {
+                color: #13141c;
+                transition: all 0.2s;
+            }
         }
+
 
     }
 
@@ -157,7 +155,8 @@
         padding: 2rem;
 
         &:hover {
-            background-color: #eeeeee;
+            background-color: #13141c;
+            color: #fff;
             transition: background-color .3s;
             // z-index: 4;
             // transform: translate3d(0px, 0px, 0px);

@@ -15,7 +15,6 @@ export const renderFavourite = favourite => {
     const image = poster === 'https://image.tmdb.org/t/p/w780null' ? 'http://samodrole.com/projects/amos/images/noImage.png' : `${poster}`;
 
      const markup = `
-     <button class="close close-fav">&times;</button>
      <a href="#${favourite.id}">
         <li class="favourites-card">
                 <div class="favourite-poster">

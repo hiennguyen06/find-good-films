@@ -20,6 +20,7 @@ const renderSearchMovies = search => {
                 <img src="${image}">
                 <div class="movie-card__info">
                     <p>${search.title}</p>
+                    <p>${search.release_date.substring(0, 4)}</p>
                 </div>  
             </a>
         </li>

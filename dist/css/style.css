@@ -57,6 +57,10 @@ a {
 .fa-play {
   color: #fff; }
 
+.active {
+  color: #13141c;
+  border-bottom: 2px solid #13141c; }
+
 .loader {
   margin: 24vh auto;
   text-align: center;
@@ -143,11 +147,12 @@ a {
       font-size: 900;
       font-family: 'Merriweather', serif;
       margin-right: 4rem;
-      color: #999999;
-      padding-bottom: 4px; }
-    .nav-items ul .active-nav-link {
-      color: #13141c;
-      border-bottom: 2px solid #13141c; }
+      color: #999; }
+    .nav-items ul a {
+      padding-bottom: 6px; }
+      .nav-items ul a:hover {
+        color: #13141c;
+        transition: all 0.2s; }
   .nav-items button {
     font-size: 2rem;
     padding-left: 2rem; }
@@ -163,7 +168,8 @@ a {
   .search-list .movie-card {
     padding: 2rem; }
     .search-list .movie-card:hover {
-      background-color: #eeeeee;
+      background-color: #13141c;
+      color: #fff;
       transition: background-color .3s; }
     .search-list .movie-card:hover .movie-card__info {
       visibility: visible;
@@ -333,8 +339,9 @@ a {
   height: 100vh; }
   .wrapper .side-bar {
     padding: 0 4rem;
-    background-color: #13141c;
-    color: #fff; }
+    border-right: 1px dotted #c1c1b5;
+    background-color: #fff;
+    color: #13141c; }
     .wrapper .side-bar__content {
       position: sticky;
       top: 0; }
@@ -342,8 +349,8 @@ a {
         font-size: 3rem;
         font-weight: 900;
         padding: 3.2rem 0;
-        background-color: #13141c;
-        border-bottom: 1px solid #fff;
+        background-color: #fff;
+        border-bottom: 1px solid #c1c1b5;
         font-family: 'Merriweather', serif; }
       .wrapper .side-bar__content p {
         font-size: 1.6rem;

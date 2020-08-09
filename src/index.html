@@ -15,7 +15,7 @@
             <aside class="side-bar">
                 <div class="side-bar__content">
                     <h1>Find Good Films</h1>
-                    <p>Find Good Films is a movie database where you can create your favourite list of movies. You can search movies or browse between Popular, New Releases, Upcoming and Top 100.</p>
+                    <p>Find Good Films is a movie database where you can create your favourite list of movies. You can search movies or browse between Popular, Upcoming and Now Playing. The movie data on this page belongs to The Movie Database (TMDb).</p>
                 </div>
             </aside>
 
@@ -24,14 +24,10 @@
                      
 
                     <nav class="nav-items">
-                        <ul>
-                            <li class="active-nav-link">Popular</li>
-                            <li class="upcoming">Upcoming</li>
-                            <li class="now-playing">Now Playing</li>
-                            <!-- <li class="active-nav-link"><a class="nav-link" href="#">Popular</a></li>
-                            <li class="upcoming"><a href="#" data-navlink="upcoming">Upcoming</a></li>
-                            <li><a href="#" data-navlink="now playing">Now Playing</a></li>
-                            <li><a href="#" data-navlink="top 100">Top 100</a></li> -->
+                        <ul class="nav-list">
+                            <li><a href="#" class="popular list active">Popular</a></li>
+                            <li><a href="#" class="upcoming list">Upcoming</a</li>
+                            <li><a href="#" class="now-playing list">Now Playing</a></li>
                         </ul>
 
                         <form class="search">
@@ -50,6 +46,7 @@
             <div class="watchlist-section">
                 <div class="watchlist-panel">
                     <div class="watchlist-header">
+                        <button class="close close-fav">&times;</button>
                         <h2>My Watchlist</h2>
                         <button class="btn btn-remove-fav">Remove all</button>
                     </div>

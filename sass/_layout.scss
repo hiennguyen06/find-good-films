@@ -6,9 +6,9 @@
 
     .side-bar {
         padding: 0 4rem;
-        // border-right: 1px dotted #c1c1b5;
-        background-color: #13141c;
-        color: #fff;
+        border-right: 1px dotted #c1c1b5;
+        background-color: #fff;
+        color: #13141c;
         // margin: 4rem;
 
         &__content {
@@ -19,8 +19,8 @@
                 font-size: 3rem;
                 font-weight: 900;
                 padding: 3.2rem 0;
-                background-color: #13141c;
-                border-bottom: 1px solid #fff;
+                background-color: #fff;
+                border-bottom: 1px solid #c1c1b5;
                 font-family: 'Merriweather', serif;
             }
     

@@ -1,12 +1,13 @@
 import Search from './models/Search';
 import Movie from './models/Movie';
 import Favourites from './models/Favourites';
-import Filter from './models/Filter';
 import * as searchView from './views/searchView';
 import * as movieView from './views/movieView';
 import * as favouritesView from './views/favouritesView';
-import * as filterView from './views/filterView';
-import { renderLoader, clearLoader, getPopular } from './views/base';
+import * as popularView from './views/popularView';
+import * as upcomingView from './views/upcomingView';
+import * as nowPlayingView from './views/nowPlayingView';
+import { renderLoader, clearLoader } from './views/base';
 
 // Test the search model
 // const search = new Search('Harry');
@@ -31,7 +32,7 @@ const controlSearch = async () => {
 
         // search for movies using the Search model
         await state.search.getSearchResults();
-        // console.log(state.search)
+        console.log(state.search)
 
         // Render results to UI
         clearLoader();
@@ -158,7 +159,7 @@ document.querySelector('.btn-open-watchlist').addEventListener('click', e=> {
 });
 
 export const closeWatchlist = () => {
-    document.querySelector('.watchlist').addEventListener('click', e => {
+    document.querySelector('.watchlist-panel').addEventListener('click', e => {
         if (e.target.matches('.close-fav, .close-fav *')) {
             document.querySelector('.watchlist-section').style.pointerEvents = 'none';
             document.querySelector('.watchlist-section').style.opacity = '0';
@@ -169,44 +170,33 @@ export const closeWatchlist = () => {
     }); 
 };
 closeWatchlist();
-getPopular();
 
-// Test the search model
-const input = () => document.querySelector(".upcoming").innerHTML.toLowerCase();
+popularView.getPopular();
 
+// const removelistActive = document.querySelector("nav-items").getElementsByTagName("a").classList.remove('active');;
 
-console.log(input);
+//trigger and remove active class 
+let activeListItems = document.querySelectorAll('.list');
 
-// const filter = new Filter('upcoming');
-// filter.getFilterResults();
-// console.log(filter);
+activeListItems.forEach(li => {
+    li.addEventListener('click', function () {
+        activeListItems.forEach(li => li.classList.remove('active'));
+        this.classList.add('active');
+    });
+})
 
+document.querySelector('.nav-items').addEventListener('click', e => {
+    if (e.target.closest('.upcoming, upcoming *')) {
+        searchView.clearSearchResults();
+        upcomingView.getUpcoming();
+  
+    } else if (e.target.closest('.now-playing, now-playing *')) {
+        searchView.clearSearchResults();
+        nowPlayingView.getNowPlaying();
 
-const controlFilter = async () => {
-    const query = input();
-    // console.log(query);
-    
-    // if there is a query, do the following actions 
-    if (query) {
-
-        // new Search Object. Add to the state
-        state.filter = new Filter(query);
-
-        // Prepare UI 
-        // searchView.clearInput();
-        // searchView.clearSearchResults();
-        // renderLoader(document.querySelector('.search-list'));
-
-        // search for movies using the Search model
-        await state.filter.getFilterResults();
-        console.log(state.filter)
-
-        // Render results to UI
-        // clearLoader();
-        // searchView.renderAllSearchMovies(state.search.result);
+    } else if (e.target.closest('.popular, popular *')) {
+        searchView.clearSearchResults();
+        popularView.getPopular();
     }
-};
+}); 
 
-document.querySelector('.upcoming').addEventListener('click', e => {
-    controlFilter();
-});
