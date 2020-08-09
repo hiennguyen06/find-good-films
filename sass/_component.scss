@@ -345,13 +345,13 @@
     .watchlist-panel {
         background-color: #fff;
         position: absolute;
-        width: 400px;
+        width: 0px;
         height: 100vh;
         box-sizing: border-box;
         top: 0;
         right: 0;
         opacity: 1;
-        transition: .25s all;
+        transition: .4s all;
         overflow: scroll;
         box-shadow: 0 0 1.5rem rgba(0,0,0,0.2);
     }

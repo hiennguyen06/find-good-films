@@ -143,7 +143,8 @@ document.querySelector('.search').addEventListener('submit', e => {
 document.querySelector('.movie').addEventListener('click', e => {
     if (e.target.closest('.btn-watchlist, btn-watchlist *')) {
         controlFavourite();
-    }   
+    }
+
 });
 
 
@@ -155,6 +156,8 @@ document.querySelector('.btn-open-watchlist').addEventListener('click', e=> {
     // document.querySelector('.movie').style.display = 'grid';
     document.querySelector('.watchlist-section').style.opacity = '1';
     document.querySelector('.watchlist-section').style.pointerEvents = 'auto';
+    document.querySelector('.watchlist-panel').style.width = '400px';
+
 });
 
 export const closeWatchlist = () => {
@@ -162,6 +165,7 @@ export const closeWatchlist = () => {
         if (e.target.matches('.close-fav, .close-fav *')) {
             document.querySelector('.watchlist-section').style.pointerEvents = 'none';
             document.querySelector('.watchlist-section').style.opacity = '0';
+            document.querySelector('.watchlist-panel').style.width = '0';
             const scrollY = document.getElementsByTagName('body')[0].style.top;
             document.getElementsByTagName('body')[0].style.position = '';
             document.getElementsByTagName('body')[0].style.top = '';
@@ -202,4 +206,5 @@ document.querySelector('.nav-items').addEventListener('click', e => {
         popularView.getPopular();
     }
 }); 
+
 
