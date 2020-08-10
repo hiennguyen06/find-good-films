@@ -1,6 +1,6 @@
 .wrapper {
     display: grid;
-    grid-template-columns: 20rem 1fr;
+    grid-template-columns: 18rem 1fr;
     width: 100vw;
     height: 100vh;
     font-family: 'Hind', sans-serif;
@@ -37,7 +37,7 @@
             position: sticky;
             top: 0;
             background-color: #fff;
-            height: 20vh;
+            height: 22vh;
             padding: 3rem 6.4rem 0rem 6.4rem;
             
             &__container {
