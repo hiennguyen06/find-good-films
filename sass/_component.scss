@@ -164,8 +164,9 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(25rem, 25rem));
     grid-gap: 2rem 1rem ;
-    justify-content: center;
+    justify-content: left;
     align-content: space-between;
+    padding-left: 6rem;
 
     .movie-card {
         padding: 1rem;
