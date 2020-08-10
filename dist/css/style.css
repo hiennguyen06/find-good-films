@@ -110,7 +110,8 @@ a {
       font-size: 1.6rem; }
 
 .dynamic-heading {
-  margin: 4.4rem 0 0 0; }
+  margin: 4.4rem 0 0 0;
+  padding-bottom: 8px; }
   .dynamic-heading__title {
     font-size: 3.2rem; }
 
