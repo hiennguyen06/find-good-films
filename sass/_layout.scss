@@ -1,27 +1,24 @@
 .wrapper {
     display: grid;
-    grid-template-columns: 36rem 1fr;
+    grid-template-columns: 20rem 1fr;
     width: 100vw;
     height: 100vh;
+    font-family: 'Hind', sans-serif;
 
     .side-bar {
-        padding: 0 4rem;
-        border-right: 1px dotted #c1c1b5;
-        background-color: #fff;
-        color: #13141c;
-        // margin: 4rem;
+        background-color: #13141c;
 
         &__content {
             position: sticky;
             top: 0;
     
             h1 {
-                font-size: 3rem;
-                font-weight: 900;
-                padding: 3.2rem 0;
-                background-color: #fff;
-                border-bottom: 1px solid #c1c1b5;
-                font-family: 'Merriweather', serif;
+                font-size: 1.6rem;
+                font-weight: 600;
+                padding: 3rem 2.4rem;
+                font-family: 'Hind', sans-serif;
+                color: #fff;
+                background-color: #212330;
             }
     
             p {
@@ -34,16 +31,34 @@
     }
     
     .main-container {
-        padding: 0 4rem;
+        // padding: 0 4rem;
 
         .main-nav {
-            background-color: #fff;
             position: sticky;
             top: 0;
+            background-color: #fff;
+            height: 20vh;
+            padding: 3rem 6.4rem 0rem 6.4rem;
+            
+            &__container {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+
+                button {
+                    font-size: 1.6rem;
+                    padding-left: 2rem;
+                    outline: none;
+                    cursor: pointer;
+                    color: #000;
+
+                    i {
+                        padding-right: 6px;
+                    }
+                }
+            }
         }
 
-        .main-title {
-            background-color: green;
-        }
     } 
 }

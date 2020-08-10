@@ -28,6 +28,8 @@ const controlSearch = async () => {
         // Prepare UI 
         searchView.clearInput();
         searchView.clearSearchResults();
+        document.querySelector('.dynamic-heading__title').innerHTML = `Showing results for '${query}'`
+
         renderLoader(document.querySelector('.search-list'));
 
         // search for movies using the Search model
@@ -192,18 +194,23 @@ activeListItems.forEach(li => {
     });
 })
 
-document.querySelector('.nav-items').addEventListener('click', e => {
+document.querySelector('.side-items').addEventListener('click', e => {
     if (e.target.closest('.upcoming, upcoming *')) {
         searchView.clearSearchResults();
         upcomingView.getUpcoming();
+        document.querySelector('.dynamic-heading__title').innerHTML = 'Showing Upcoming'
   
     } else if (e.target.closest('.now-playing, now-playing *')) {
         searchView.clearSearchResults();
         nowPlayingView.getNowPlaying();
+        document.querySelector('.dynamic-heading__title').innerHTML = 'Showing Now Playing'
+
 
     } else if (e.target.closest('.popular, popular *')) {
         searchView.clearSearchResults();
         popularView.getPopular();
+        document.querySelector('.dynamic-heading__title').innerHTML = 'Showing Popular'
+
     }
 }); 
 

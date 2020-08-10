@@ -12,10 +12,11 @@ html {
   font-size: 62.5%; }
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   font-weight: 400;
   line-height: 1.5;
   color: #13141c;
+  background-color: #fff;
   background-size: cover;
   background-repeat: no-repeat;
   min-height: 100vh; }
@@ -59,8 +60,9 @@ a {
   color: #fff; }
 
 .active {
-  color: #13141c;
-  border-bottom: 2px solid #13141c; }
+  background: #212330;
+  border-left: 2px solid #fff;
+  color: red; }
 
 .loader {
   margin: 24vh auto;
@@ -79,100 +81,51 @@ a {
     transform: rotate(0); }
   100% {
     transform: rotate(360deg); } }
+.side-items ul {
+  margin-top: 3.2rem; }
+  .side-items ul li {
+    font-size: 1.6rem;
+    color: #fff;
+    padding: 1.6rem 2.4rem; }
+  .side-items ul i {
+    padding-right: 8px; }
+
 .search {
-  justify-self: flex-end;
-  --size: 4.8rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 0;
-  overflow: hidden;
-  position: relative;
-  width: var(--size);
-  height: var(--size);
-  transition: width 400ms;
-  padding-right: 10px; }
+  background-color: #e6e6e6;
+  padding: 1.2rem 2rem;
+  border-radius: 6px; }
+  .search i {
+    font-size: 1.6rem;
+    background-color: #e6e6e6;
+    padding-left: 4px; }
   .search input[type=text] {
     font-size: 1.6rem; }
   .search-field {
-    border: 0;
-    padding: .25rem 1em;
-    flex-grow: 1;
-    outline: 0;
-    z-index: 2;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    opacity: 0;
-    cursor: pointer; }
-    .search-field::-webkit-input-placeholder {
-      font-size: 1.6rem;
-      color: #dad8d7;
-      padding-left: 2px; }
-  .search-submit {
-    font-size: 1.6rem;
-    margin-left: auto;
-    background: 0;
-    border: 0;
-    cursor: pointer;
-    border-radius: 50%;
-    transition: background 200ms ease-out;
-    width: calc(var(--size) - 10px);
-    height: calc(var(--size) - 10px);
-    color: #171717; }
-
-.search:focus-within {
-  width: 50%;
-  border: 1px solid black; }
-  .search:focus-within .search-field {
-    opacity: 1;
-    z-index: initial;
-    cursor: initial;
-    width: calc(100% - var(--size)); }
-  .search:focus-within .search-submit {
-    color: #171717; }
-    .search:focus-within .search-submit:hover, .search:focus-within .search-submit:focus {
-      outline: 0; }
-
-.nav-items {
-  display: grid;
-  grid-template-columns: max-content 1fr max-content;
-  align-items: center;
-  padding: 3.2rem 0; }
-  .nav-items ul {
-    display: flex; }
-    .nav-items ul li {
-      font-size: 1.8rem;
-      font-size: 900;
-      font-family: 'Merriweather', serif;
-      margin-right: 4rem;
-      color: #999; }
-    .nav-items ul a {
-      padding-bottom: 6px; }
-      .nav-items ul a:hover {
-        color: #13141c;
-        transition: all 0.2s; }
-  .nav-items button {
-    font-size: 2rem;
-    padding-left: 2rem;
     outline: none;
-    cursor: pointer; }
+    width: 440px;
+    border: 0;
+    background-color: #e6e6e6;
+    padding-left: 4px; }
+    .search-field::-webkit-input-placeholder {
+      font-size: 1.6rem; }
+
+.dynamic-heading {
+  margin: 4.4rem 0 0 0; }
+  .dynamic-heading__title {
+    font-size: 3.2rem; }
 
 .search-list {
-  background-color: white;
+  background-color: #fff;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(25rem, 25rem));
-  grid-gap: 2rem;
-  justify-content: left;
-  align-content: space-between;
-  padding: 2rem 0; }
+  grid-gap: 2rem 1rem;
+  justify-content: center;
+  align-content: space-between; }
   .search-list .movie-card {
-    padding: 2rem; }
+    padding: 1rem; }
     .search-list .movie-card:hover {
-      background-color: #13141c;
-      color: #fff;
+      background-color: #e6e6e6;
+      color: #13141c;
       transition: background-color .3s; }
     .search-list .movie-card:hover .movie-card__info {
       visibility: visible;
@@ -184,6 +137,8 @@ a {
       font-weight: 500;
       visibility: hidden;
       text-align: center; }
+      .search-list .movie-card__info .movie-card__title {
+        font-weight: 700; }
     .search-list .movie-card img {
       width: 100%;
       display: block;
@@ -345,39 +300,48 @@ a {
     color: #13141c; }
   .close-fav:active {
     outline: none;
-    border: none; }
+    border: none;
+    color: #000 !important; }
 
 .wrapper {
   display: grid;
-  grid-template-columns: 36rem 1fr;
+  grid-template-columns: 20rem 1fr;
   width: 100vw;
-  height: 100vh; }
+  height: 100vh;
+  font-family: 'Hind', sans-serif; }
   .wrapper .side-bar {
-    padding: 0 4rem;
-    border-right: 1px dotted #c1c1b5;
-    background-color: #fff;
-    color: #13141c; }
+    background-color: #13141c; }
     .wrapper .side-bar__content {
       position: sticky;
       top: 0; }
       .wrapper .side-bar__content h1 {
-        font-size: 3rem;
-        font-weight: 900;
-        padding: 3.2rem 0;
-        background-color: #fff;
-        border-bottom: 1px solid #c1c1b5;
-        font-family: 'Merriweather', serif; }
+        font-size: 1.6rem;
+        font-weight: 600;
+        padding: 3rem 2.4rem;
+        font-family: 'Hind', sans-serif;
+        color: #fff;
+        background-color: #212330; }
       .wrapper .side-bar__content p {
         font-size: 1.6rem;
         line-height: 1.4;
         padding: 3.2rem 0; }
-  .wrapper .main-container {
-    padding: 0 4rem; }
-    .wrapper .main-container .main-nav {
-      background-color: #fff;
-      position: sticky;
-      top: 0; }
-    .wrapper .main-container .main-title {
-      background-color: green; }
+  .wrapper .main-container .main-nav {
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    height: 20vh;
+    padding: 3rem 6.4rem 0rem 6.4rem; }
+    .wrapper .main-container .main-nav__container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center; }
+      .wrapper .main-container .main-nav__container button {
+        font-size: 1.6rem;
+        padding-left: 2rem;
+        outline: none;
+        cursor: pointer;
+        color: #000; }
+        .wrapper .main-container .main-nav__container button i {
+          padding-right: 6px; }
 
 /*# sourceMappingURL=style.css.map */

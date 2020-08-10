@@ -31,7 +31,7 @@ const renderUpcomingMovie = (movie) => {
             <a href="#${movie.id}">
                 <img src="${image}">
                 <div class="movie-card__info">
-                    <p>${movie.title}</p>
+                    <p class="movie-card__title">${movie.title}</p>
                     <p>${movie.release}</p>
                 </div>  
             </a>
