@@ -8,7 +8,6 @@ export const getPopular = async () => {
 
     const res = await axios(popularURL);
     const data = res.data.results
-    console.log(data);
 
     const movie = data.map((result, index) => ({
         index: index + 1,

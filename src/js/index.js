@@ -64,7 +64,7 @@ const controlMovie = async () => {
             
             // Get the movie data
             await state.movie.getMovie();
-            // console.log(state.movie); // console log the state.movie for now. Clicking on each movie will render a new id in the console.
+            console.log(state.movie); // console log the state.movie for now. Clicking on each movie will render a new id in the console.
 
             // render the movie to UI
             movieView.renderMovie(
@@ -153,12 +153,21 @@ document.querySelector('.movie').addEventListener('click', e => {
 
 document.querySelector('.btn-open-watchlist').addEventListener('click', e=> {
     const scrollY = window.scrollY;
+    const mobileWatchListPanel = window.matchMedia("(max-width: 700px)")
+
+
+
     document.getElementsByTagName('body')[0].style.position = 'fixed';
     document.getElementsByTagName('body')[0].style.top = `-${scrollY}px`;
     // document.querySelector('.movie').style.display = 'grid';
     document.querySelector('.watchlist-section').style.opacity = '1';
     document.querySelector('.watchlist-section').style.pointerEvents = 'auto';
     document.querySelector('.watchlist-panel').style.width = '400px';
+    
+    if (mobileWatchListPanel.matches) {
+        document.querySelector('.watchlist-panel').style.width = '100%';
+
+    }
 
 });
 

@@ -45,12 +45,9 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1.2rem 2.4rem;
-    border: 1px solid #fdbf00;
-}
-
-.btn-trailer {
-    background-color: #fdbf00;
+    padding: 1.2rem 2.8rem;
+    background-color: #212330;
+    border-radius: 4px;
 }
 
 .btn-remove-fav {
@@ -68,7 +65,7 @@ a {
 
 
 .fa-bookmark {
-    color: #fdbf00;
+    color: #fff;
 }
 
 .fa-play {
