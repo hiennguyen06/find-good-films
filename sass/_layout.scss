@@ -5,12 +5,37 @@
     height: 100vh;
     font-family: 'Hind', sans-serif;
 
+    @media only screen and (max-width: 450px) {
+        grid-template-columns: 1fr 1fr;
+    }
+
     .side-bar {
         background-color: #13141c;
+
+        @media only screen and (max-width: 450px) {
+            position: fixed;
+            width: 50vw;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            transition: .25s all;
+            z-index: 100;
+            opacity: 0;
+            overflow: hidden;
+            pointer-events: none;
+
+            // display: none;
+            
+        }
 
         &__content {
             position: sticky;
             top: 0;
+
+            @media only screen and (max-width: 450px) {
+                margin-top: 6.4rem;
+            }
     
             h1 {
                 font-size: 1.6rem;
@@ -18,19 +43,25 @@
                 padding: 3rem 2.4rem;
                 font-family: 'Hind', sans-serif;
                 color: #fff;
+
+                @media only screen and (max-width: 450px) {
+                    display: none;
+                }
             }
     
             p {
                 font-size: 1.6rem;
                 line-height: 1.4;
                 padding: 3.2rem 0;
-    
+
             }
         }
     }
     
     .main-container {
         // padding: 0 4rem;
+        position: relative;
+
 
         .main-nav {
             position: sticky;
@@ -38,6 +69,12 @@
             background-color: #fff;
             height: 22vh;
             padding: 3rem 6.4rem 0rem 6.4rem;
+
+             @media only screen and (max-width: 450px) {
+                padding: 0;
+                height: 16vh;
+                padding: 1.2rem 1.6rem;
+            }
             
             &__container {
                 display: flex;
@@ -54,6 +91,10 @@
 
                     i {
                         padding-right: 6px;
+
+                        @media only screen and (max-width: 450px) {
+                            padding: 0;
+                        }
                     }
                 }
             }

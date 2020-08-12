@@ -204,23 +204,60 @@ activeListItems.forEach(li => {
 })
 
 document.querySelector('.side-items').addEventListener('click', e => {
+    const sideNavMediaQuery = window.matchMedia("(max-width: 450px)");
+    const displaySideBar = document.querySelector('.side-bar');
+
     if (e.target.closest('.upcoming, upcoming *')) {
         searchView.clearSearchResults();
         upcomingView.getUpcoming();
         document.querySelector('.dynamic-heading__title').innerHTML = 'Showing Upcoming'
+
+        if (sideNavMediaQuery.matches) {
+            displaySideBar.style.opacity = '0';
+            displaySideBar.style.pointerEvents = 'none';
+
+        }
+
   
     } else if (e.target.closest('.now-playing, now-playing *')) {
         searchView.clearSearchResults();
         nowPlayingView.getNowPlaying();
-        document.querySelector('.dynamic-heading__title').innerHTML = 'Showing Now Playing'
+        document.querySelector('.dynamic-heading__title').innerHTML = 'Showing Now Playing';
 
+        if (sideNavMediaQuery.matches) {
+            displaySideBar.style.opacity = '0';
+            displaySideBar.style.pointerEvents = 'none';
+
+        }
 
     } else if (e.target.closest('.popular, popular *')) {
         searchView.clearSearchResults();
         popularView.getPopular();
         document.querySelector('.dynamic-heading__title').innerHTML = 'Showing Popular'
 
+        if (sideNavMediaQuery.matches) {
+            displaySideBar.style.opacity = '0';
+            displaySideBar.style.pointerEvents = 'none';
+
+        }
+
     }
 }); 
 
 
+const showSideNav = () => {
+    const sideNavMediaQuery = window.matchMedia("(max-width: 450px)");
+    const displaySideBar = document.querySelector('.side-bar');
+    document.querySelector('.mobile-nav-icon').addEventListener('click', e => {
+        if (sideNavMediaQuery.matches) {
+            displaySideBar.style.opacity = '1';
+            displaySideBar.style.pointerEvents = 'auto';
+        } 
+    });
+}
+showSideNav();
+
+document.querySelector('.mobile-close-nav').addEventListener('click', e => {
+        document.querySelector('.side-bar').style.pointerEvents = 'none';
+        document.querySelector('.side-bar').style.opacity = '0';
+});

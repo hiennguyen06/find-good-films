@@ -81,21 +81,37 @@ a {
     transform: rotate(360deg); } }
 .side-items ul {
   margin-top: 3.2rem; }
+  @media only screen and (max-width: 450px) {
+    .side-items ul {
+      margin-top: 0; } }
   .side-items ul li {
     font-size: 1.6rem;
     color: #fff;
     padding: 1.6rem 2.4rem; }
+    @media only screen and (max-width: 450px) {
+      .side-items ul li {
+        font-size: 1.2rem;
+        padding: 1.2rem 2.4rem; } }
   .side-items ul i {
     padding-right: 8px; }
 
 .search {
   background-color: #e6e6e6;
   padding: 1.2rem 2rem;
-  border-radius: 6px; }
+  border-radius: 6px;
+  display: flex;
+  align-items: center; }
+  @media only screen and (max-width: 450px) {
+    .search {
+      padding: 6px 1rem;
+      align-items: center; } }
   .search i {
     font-size: 1.6rem;
     background-color: #e6e6e6;
     padding-left: 4px; }
+    @media only screen and (max-width: 450px) {
+      .search i {
+        font-size: 1rem; } }
   .search input[type=text] {
     font-size: 1.6rem; }
   .search-field {
@@ -106,11 +122,25 @@ a {
     padding-left: 4px; }
     .search-field::-webkit-input-placeholder {
       font-size: 1.6rem; }
+      @media only screen and (max-width: 450px) {
+        .search-field::-webkit-input-placeholder {
+          font-size: 1.2rem; } }
+    @media only screen and (max-width: 450px) {
+      .search-field {
+        width: 160px; } }
 
 .dynamic-heading {
   margin: 4.4rem 0 0 0; }
+  @media only screen and (max-width: 450px) {
+    .dynamic-heading {
+      margin: 3.2rem 0 8px 0;
+      display: flex;
+      align-items: flex-end; } }
   .dynamic-heading__title {
     font-size: 3.2rem; }
+    @media only screen and (max-width: 450px) {
+      .dynamic-heading__title {
+        font-size: 2rem; } }
 
 .search-list {
   background-color: #fff;
@@ -120,12 +150,23 @@ a {
   justify-content: left;
   align-content: space-between;
   padding: 0rem 0 0 6rem; }
+  @media only screen and (max-width: 450px) {
+    .search-list {
+      padding: 0;
+      grid-gap: 1.2rem 0;
+      width: 100vw;
+      grid-template-columns: repeat(auto-fit, minmax(18rem, 18rem));
+      justify-content: center; } }
   .search-list .movie-card {
     padding: 1rem; }
     .search-list .movie-card:hover {
       background-color: #e6e6e6;
       color: #13141c;
       transition: background-color .3s; }
+      @media only screen and (max-width: 450px) {
+        .search-list .movie-card:hover {
+          background-color: transparent;
+          transition: none; } }
     .search-list .movie-card:hover .movie-card__info {
       visibility: visible;
       opacity: 1;
@@ -136,9 +177,18 @@ a {
       font-weight: 500;
       visibility: hidden;
       text-align: center; }
+      @media only screen and (max-width: 450px) {
+        .search-list .movie-card__info {
+          visibility: visible; } }
       .search-list .movie-card__info .movie-card__title {
         font-weight: 700;
         font-size: 1.6rem; }
+        @media only screen and (max-width: 450px) {
+          .search-list .movie-card__info .movie-card__title {
+            font-size: 1.4rem; } }
+      @media only screen and (max-width: 450px) {
+        .search-list .movie-card__info p {
+          font-size: 1.2rem; } }
     .search-list .movie-card img {
       width: 100%;
       display: block;
@@ -371,38 +421,92 @@ a {
   width: 100vw;
   height: 100vh;
   font-family: 'Hind', sans-serif; }
+  @media only screen and (max-width: 450px) {
+    .wrapper {
+      grid-template-columns: 1fr 1fr; } }
   .wrapper .side-bar {
     background-color: #13141c; }
+    @media only screen and (max-width: 450px) {
+      .wrapper .side-bar {
+        position: fixed;
+        width: 50vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        transition: .25s all;
+        z-index: 100;
+        opacity: 0;
+        overflow: hidden;
+        pointer-events: none; } }
     .wrapper .side-bar__content {
       position: sticky;
       top: 0; }
+      @media only screen and (max-width: 450px) {
+        .wrapper .side-bar__content {
+          margin-top: 6.4rem; } }
       .wrapper .side-bar__content h1 {
         font-size: 1.6rem;
         font-weight: 600;
         padding: 3rem 2.4rem;
         font-family: 'Hind', sans-serif;
         color: #fff; }
+        @media only screen and (max-width: 450px) {
+          .wrapper .side-bar__content h1 {
+            display: none; } }
       .wrapper .side-bar__content p {
         font-size: 1.6rem;
         line-height: 1.4;
         padding: 3.2rem 0; }
-  .wrapper .main-container .main-nav {
-    position: sticky;
-    top: 0;
-    background-color: #fff;
-    height: 22vh;
-    padding: 3rem 6.4rem 0rem 6.4rem; }
-    .wrapper .main-container .main-nav__container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center; }
-      .wrapper .main-container .main-nav__container button {
-        font-size: 1.6rem;
-        padding-left: 2rem;
-        outline: none;
-        cursor: pointer;
-        color: #000; }
-        .wrapper .main-container .main-nav__container button i {
-          padding-right: 6px; }
+  .wrapper .main-container {
+    position: relative; }
+    .wrapper .main-container .main-nav {
+      position: sticky;
+      top: 0;
+      background-color: #fff;
+      height: 22vh;
+      padding: 3rem 6.4rem 0rem 6.4rem; }
+      @media only screen and (max-width: 450px) {
+        .wrapper .main-container .main-nav {
+          padding: 0;
+          height: 16vh;
+          padding: 1.2rem 1.6rem; } }
+      .wrapper .main-container .main-nav__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center; }
+        .wrapper .main-container .main-nav__container button {
+          font-size: 1.6rem;
+          padding-left: 2rem;
+          outline: none;
+          cursor: pointer;
+          color: #000; }
+          .wrapper .main-container .main-nav__container button i {
+            padding-right: 6px; }
+            @media only screen and (max-width: 450px) {
+              .wrapper .main-container .main-nav__container button i {
+                padding: 0; } }
+
+@media only screen and (max-width: 450px) {
+  .mobile-remove {
+    display: none; } }
+
+.mobile-nav-icon {
+  font-size: 1.6rem;
+  display: none; }
+  @media only screen and (max-width: 450px) {
+    .mobile-nav-icon {
+      display: block; } }
+
+.mobile-close-nav {
+  display: none;
+  color: #fff; }
+  @media only screen and (max-width: 450px) {
+    .mobile-close-nav {
+      font-size: 3.2rem;
+      display: block;
+      position: absolute;
+      top: 8px;
+      right: 16px; } }
 
 /*# sourceMappingURL=style.css.map */

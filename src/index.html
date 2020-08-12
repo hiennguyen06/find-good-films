@@ -12,9 +12,11 @@
     <body>
         <div class="wrapper">
             <aside class="side-bar">
+                <button class="btn mobile-close-nav">&times;</button>
                 <div class="side-bar__content">
                     <h1>Find Good Films</h1>
                      <nav class="side-items">
+
                         <ul class="side-list">
                             <a href="#" class="popular"><li class="list active"><i class="fas fa-star"></i>Popular</li></a>
                             <a href="#" class="upcoming"><li class="list"><i class="fas fa-stopwatch"></i>Upcoming</li></a>
@@ -25,18 +27,22 @@
             </aside>
 
             <section class="main-container">
+  
                 <div class="main-nav">
                     <div class="main-nav__container">
+                        <i class="fas fa-bars mobile-nav-icon"></i>
                         <form class="search">
                             <i class="fas fa-search"></i>
                             <input type="text" class="search-field" placeholder="Search">
                         </form>
-                        <button class="btn btn-open-watchlist"><i class="far fa-list-alt"></i>Watchlist</button>       
+                        <button class="btn btn-open-watchlist"><i class="far fa-list-alt"></i><span class="mobile-remove">Watchlist<span></button>       
                     </div>
                     <div class="dynamic-heading">
                         <h1 class="dynamic-heading__title">Showing Popular</h1>
                     </div>
                 </div>
+
+
                 
                 <ul class="search-list"></ul>
             </section>  

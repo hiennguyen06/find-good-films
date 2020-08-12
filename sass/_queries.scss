@@ -1,0 +1,28 @@
+.mobile-remove {
+    @media only screen and (max-width: 450px) {
+        display: none;
+    }
+}
+
+.mobile-nav-icon {
+    font-size: 1.6rem;
+    display: none;
+
+    @media only screen and (max-width: 450px) {
+        display: block;
+    }
+
+}
+
+.mobile-close-nav {
+    display: none;
+    color: #fff;
+
+    @media only screen and (max-width: 450px) {
+        font-size: 3.2rem;
+        display: block;
+        position: absolute;
+        top: 8px;
+        right: 16px;
+    }
+}
