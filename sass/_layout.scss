@@ -67,13 +67,14 @@
             position: sticky;
             top: 0;
             background-color: #fff;
-            height: 22vh;
+            height: 10vh;
             padding: 3rem 6.4rem 0rem 6.4rem;
 
              @media only screen and (max-width: 450px) {
                 padding: 0;
-                height: 16vh;
+                height: 8vh;
                 padding: 1.2rem 1.6rem;
+                background-color: #13141c;
             }
             
             &__container {
@@ -94,6 +95,7 @@
 
                         @media only screen and (max-width: 450px) {
                             padding: 0;
+                            color: #fff;
                         }
                     }
                 }
