@@ -72,9 +72,9 @@
 
              @media only screen and (max-width: 450px) {
                 padding: 0;
-                height: 8vh;
                 padding: 1.2rem 1.6rem;
                 background-color: #13141c;
+
             }
             
             &__container {
@@ -89,6 +89,10 @@
                     outline: none;
                     cursor: pointer;
                     color: #000;
+
+                    @media only screen and (max-width: 450px) {
+                        padding: 0;
+                    }
 
                     i {
                         padding-right: 6px;

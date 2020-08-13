@@ -60,50 +60,71 @@
 
 .search {    
     background-color: #e6e6e6;
-    padding: 1.2rem 2rem;
+    padding: 1.2rem 2rem 1.2rem 1.2rem;
     border-radius: 6px;
     display: flex;
     align-items: center;
+    width: 480px;
 
 
     @media only screen and (max-width: 450px) {
-        padding: 6px 1.2rem; 
-        align-items: center;    
+        padding: 1rem 1.2rem 1rem 8px; 
+        align-items: center;   
+        background-color: transparent;
+        border: 1px solid #fff;
+        width: 240px;
+ 
     }
 
     i {
         font-size: 1.6rem;
         background-color: #e6e6e6;
         padding-left: 4px;
+        color: #999999;
 
         @media only screen and (max-width: 450px) {
             font-size: 1.2rem;
+            background-color: transparent;
+            color: #999999;
+
         }
 
     }
 
     input[type=text] {
-        font-size: 1.4rem;
+        font-size: 1.6rem;
+        color: #000;
 
+        @media only screen and (max-width: 450px) {
+            color: #fff;
+        }
     }
+
 
     &-field {
         outline: none;
-        width: 440px;
+        width: 100%;
         border: 0;
         background-color: #e6e6e6;
         padding-left: 4px;
 
+        @media only screen and (max-width: 450px) {
+            background-color: transparent;
+        }
+
         &::-webkit-input-placeholder {
             font-size: 1.6rem;
+            color: #999999;
 
             @media only screen and (max-width: 450px) {
-                font-size: 1.2rem;
+                font-size: 1.6rem;
+                color: #999999;
+
             }
         }
 
         @media only screen and (max-width: 450px) {
-            width: 200px;
+            width: 100%;
         }
     }
 }
@@ -121,7 +142,8 @@
         font-size: 3.2rem;
 
         @media only screen and (max-width: 450px) {
-            font-size: 2rem;
+            font-size: 2.4rem;
+            font-weight: 700;
         }
     }
 }
@@ -342,7 +364,8 @@
         display: flex;
         flex-direction: column;
         width: 100vw;
-        height: auto;
+        min-height: 100vh;
+        padding: 4rem 0;
     }
 
     h3 {
