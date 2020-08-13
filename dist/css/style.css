@@ -101,10 +101,10 @@ a {
   border-radius: 6px;
   display: flex;
   align-items: center;
-  width: 480px; }
+  width: 440px; }
   @media only screen and (max-width: 450px) {
     .search {
-      padding: 1rem 1.2rem 1rem 8px;
+      padding: 0.6rem 1.2rem 0.6rem 8px;
       align-items: center;
       background-color: transparent;
       border: 1px solid #fff;
@@ -420,7 +420,7 @@ a {
   top: 32px;
   right: 24px;
   background-color: transparent;
-  color: #fff;
+  color: #13141c;
   border: none;
   font-size: 4rem;
   pointer: cursor;
@@ -486,7 +486,7 @@ a {
       @media only screen and (max-width: 450px) {
         .wrapper .main-container .main-nav {
           padding: 0;
-          padding: 1.2rem 1.6rem;
+          padding: 1.6rem 1.6rem;
           background-color: #13141c; } }
       .wrapper .main-container .main-nav__container {
         display: flex;
